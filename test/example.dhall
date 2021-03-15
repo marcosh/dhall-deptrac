@@ -1,8 +1,9 @@
-let Deptrac = https://raw.githubusercontent.com/marcosh/dhall-deptrac/main/src/deptrac.dhall
+let Deptrac = ../src/deptrac.dhall
 
 in
 { paths =
   [ "./src" ]
+, exclude_files = [] : List Text
 , layers =
   [ { name = "Domain"
     , collectors =

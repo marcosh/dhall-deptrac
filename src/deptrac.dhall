@@ -83,6 +83,7 @@ let layerNamespace = \(namespace : Text) -> \(layer : Layer) ->
   } : Layer
 let Depfile : Type
   = { paths: List Text
+    , exclude_files: List Text
     , layers : List Layer
     , ruleset : List { mapKey : Text, mapValue : List Text }
     }
@@ -92,6 +93,7 @@ let rulesetNamespace = \(namespace : Text) -> \(ruleset : { mapKey : Text, mapVa
   } : { mapKey : Text, mapValue : List Text }
 let namespace = \(namespace : Text) -> \(depfile : Depfile) ->
   { paths = depfile.paths
+  , exclude_files = depfile.exclude_files
   , layers = map Layer Layer (layerNamespace namespace) depfile.layers
   , ruleset = map { mapKey : Text, mapValue : List Text } { mapKey : Text, mapValue : List Text }
     (rulesetNamespace namespace)
