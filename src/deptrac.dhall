@@ -82,6 +82,7 @@ let Depfile : Type
     , baseline : Optional Text
     , ignore_uncovered_internal_classes : Bool
     , use_relative_path_from_depfile : Bool
+    , skip_violations : List { mapKey : Text, mapValue : Text }
     }
 in
 { RegexCollector = RegexCollector

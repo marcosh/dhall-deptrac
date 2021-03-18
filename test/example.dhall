@@ -32,4 +32,5 @@ DeptracNamespace.namespace
   , baseline = None Text
   , ignore_uncovered_internal_classes = True
   , use_relative_path_from_depfile = True
+  , skip_violations = [] : List { mapKey : Text, mapValue : Text }
   }
