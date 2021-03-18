@@ -18,36 +18,32 @@ and then create an instance of the [`Depfile`](https://github.com/marcosh/dhall-
 let Deptrac = https://raw.githubusercontent.com/marcosh/dhall-deptrac/main/src/deptrac.dhall
 
 in
-{ paths =
-  [ "./src" ]
-, exclude_files = [] : List Text
-, layers =
-  [ { name = "Domain"
-    , collectors =
-      [ Deptrac.className "^Domain\\\\.*" ]
-    }
-  , { name = "Infrastructure"
-    , collectors =
-      [ Deptrac.className "^Infrastructure\\\\.*" ]
-    }
-  , { name = "Application"
-    , collectors =
-      [ Deptrac.className "^Application\\\\.*" ]
-    }
-  ]
-, ruleset = toMap
-  { Application =
-    [ "Domain"
-    , "Infrastructure"
+Deptrac.empty //
+  { paths =
+    [ "./src" ]
+  , layers =
+    [ { name = "Domain"
+      , collectors =
+        [ Deptrac.className "^Domain\\\\.*" ]
+      }
+    , { name = "Infrastructure"
+      , collectors =
+        [ Deptrac.className "^Infrastructure\\\\.*" ]
+      }
+    , { name = "Application"
+      , collectors =
+        [ Deptrac.className "^Application\\\\.*" ]
+      }
     ]
-  , Infrastructure =
-    [ "Domain" ]
+  , ruleset = toMap
+    { Application =
+      [ "Domain"
+      , "Infrastructure"
+      ]
+    , Infrastructure =
+      [ "Domain" ]
+    }
   }
-, baseline = None Text
-, ignore_uncovered_internal_classes = True
-, use_relative_path_from_depfile = True
-, skip_violations = [] : List { mapKey : Text, mapValue : Text }
-}
 ```
 
 Then you can generate the Deptrac configuration file using

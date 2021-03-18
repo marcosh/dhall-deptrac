@@ -84,6 +84,16 @@ let Depfile : Type
     , use_relative_path_from_depfile : Bool
     , skip_violations : List { mapKey : Text, mapValue : Text }
     }
+let empty : Depfile
+  = { paths = [] : List Text
+    , exclude_files = [] : List Text
+    , layers = [] : List Layer
+    , ruleset = [] : List { mapKey : Text, mapValue : List Text }
+    , baseline = None Text
+    , ignore_uncovered_internal_classes = True
+    , use_relative_path_from_depfile = True
+    , skip_violations = [] : List { mapKey : Text, mapValue : Text }
+    }
 in
 { RegexCollector = RegexCollector
 , MethodCollector = MethodCollector
@@ -101,4 +111,5 @@ in
 , boolDirectory = boolDirectory
 , bool = bool
 , Depfile = Depfile
+, empty = empty
 }
