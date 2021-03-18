@@ -1,0 +1,21 @@
+name: Test example
+on: [push, pull_request]
+
+jobs:
+  example:
+    name: TestExample
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Dhall
+        uses: docker://dhallhaskell/dhall-json:latest
+        with:
+          args: dhall-to-yaml --file test/example.dhall --output test/example.yml
+
+      - name: Deptrac
+        uses: docker://smoench/deptrac-action:latest
+        with:
+          entrypoint: sh
+          args: -c "cd test && deptrac analyse example.yml"
