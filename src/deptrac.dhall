@@ -79,6 +79,7 @@ let Depfile : Type
     , exclude_files: List Text
     , layers : List Layer
     , ruleset : List { mapKey : Text, mapValue : List Text }
+    , baseline : Optional Text
     }
 in
 { RegexCollector = RegexCollector

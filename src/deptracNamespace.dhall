@@ -19,6 +19,7 @@ let namespace = \(namespace : Text) -> \(depfile : Deptrac.Depfile) ->
   , ruleset = map { mapKey : Text, mapValue : List Text } { mapKey : Text, mapValue : List Text }
     (rulesetNamespace namespace)
     depfile.ruleset
+  , baseline = depfile.baseline
   } : Deptrac.Depfile
 in
 { textNamespace = textNamespace

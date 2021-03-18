@@ -29,4 +29,5 @@ DeptracNamespace.namespace
     , Infrastructure =
       [ "Domain" ]
     }
+  , baseline = None Text
   }
