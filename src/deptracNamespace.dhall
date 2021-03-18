@@ -21,6 +21,7 @@ let namespace = \(namespace : Text) -> \(depfile : Deptrac.Depfile) ->
     depfile.ruleset
   , baseline = depfile.baseline
   , ignore_uncovered_internal_classes = depfile.ignore_uncovered_internal_classes
+  , use_relative_path_from_depfile = depfile.use_relative_path_from_depfile
   } : Deptrac.Depfile
 in
 { textNamespace = textNamespace

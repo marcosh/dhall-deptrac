@@ -81,6 +81,7 @@ let Depfile : Type
     , ruleset : List { mapKey : Text, mapValue : List Text }
     , baseline : Optional Text
     , ignore_uncovered_internal_classes : Bool
+    , use_relative_path_from_depfile : Bool
     }
 in
 { RegexCollector = RegexCollector
