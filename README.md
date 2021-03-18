@@ -56,3 +56,13 @@ Now you can invoke Deptrac as usual with
 ```bash
 php deptrac.phar
 ```
+
+## Test
+
+Run
+
+```
+test/run.sh
+```
+
+from the root folder of the repository
