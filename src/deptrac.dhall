@@ -1,4 +1,3 @@
-let map = https://prelude.dhall-lang.org/List/map
 let RegexCollector : Type
   = { type : Text
     , regex : Text

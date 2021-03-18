@@ -1,3 +1,5 @@
+let map = https://prelude.dhall-lang.org/List/map
+
 let Deptrac = ../src/deptrac.dhall
 
 let textNamespace = \(namespace : Text) -> \(text : Text) ->
