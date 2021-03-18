@@ -20,6 +20,7 @@ let namespace = \(namespace : Text) -> \(depfile : Deptrac.Depfile) ->
     (rulesetNamespace namespace)
     depfile.ruleset
   , baseline = depfile.baseline
+  , ignore_uncovered_internal_classes = depfile.ignore_uncovered_internal_classes
   } : Deptrac.Depfile
 in
 { textNamespace = textNamespace

@@ -80,6 +80,7 @@ let Depfile : Type
     , layers : List Layer
     , ruleset : List { mapKey : Text, mapValue : List Text }
     , baseline : Optional Text
+    , ignore_uncovered_internal_classes : Bool
     }
 in
 { RegexCollector = RegexCollector

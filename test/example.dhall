@@ -30,4 +30,5 @@ DeptracNamespace.namespace
       [ "Domain" ]
     }
   , baseline = None Text
+  , ignore_uncovered_internal_classes = True
   }
