@@ -20,6 +20,7 @@ let Deptrac = https://raw.githubusercontent.com/marcosh/dhall-deptrac/main/src/d
 in
 { paths =
   [ "./src" ]
+, exclude_files = [] : List Text
 , layers =
   [ { name = "Domain"
     , collectors =
@@ -42,6 +43,8 @@ in
   , Infrastructure =
     [ "Domain" ]
   }
+, baseline = None Text
+, ignore_uncovered_internal_classes = True
 }
 ```
 
