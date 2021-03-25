@@ -15,7 +15,7 @@ let Deptrac = https://raw.githubusercontent.com/marcosh/dhall-deptrac/main/src/d
 and then create an instance of the [`Depfile`](https://github.com/marcosh/dhall-deptrac/blob/main/src/deptrac.dhall#L84) type, as in
 
 ```dhall
-let Deptrac = https://raw.githubusercontent.com/marcosh/dhall-deptrac/main/src/deptrac.dhall
+let Deptrac = https://raw.githubusercontent.com/marcosh/dhall-deptrac/v0.2.0/src/deptrac.dhall
 
 in
 Deptrac.empty //
